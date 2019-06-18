@@ -20,11 +20,11 @@ Once a large number of MNCs has been generated (~1000+), they can be analyzed to
 1. See `analyze_mncs.ipynb`
 
 ### Input Data
-- INPUT_DIR: Path to folder containing the following files named exactly below
-    `cobra model`                 (filename: 'MODEL_FILE.json')       REQUIRED
-    `strain allele matrix`        (filename: 'X_ALLELES_FILE.csv')    REQUIRED
-    `strain phenotypes matrix`    (filename: 'Y_PHENOTYPES_FILE.csv') REQUIRED
-    GENE_LIST_FILE              (filename: 'GENE_LIST_FILE.csv')    OPTIONAL - highly recommended <200 genes. otherwise sample deeply
+- The following files are to be placed in INPUT_DIR. The files should be named exactly as described below.
+    `cobra model`                 (filename: 'MODEL_FILE.json')       REQUIRED  
+    `strain allele matrix`        (filename: 'X_ALLELES_FILE.csv')    REQUIRED  
+    `strain phenotypes matrix`    (filename: 'Y_PHENOTYPES_FILE.csv') REQUIRED  
+    GENE_LIST_FILE              (filename: 'GENE_LIST_FILE.csv')    OPTIONAL - highly recommended <200 genes. otherwise sample deeply  
 - JSON object describing mapping of genes to pathways for the organism (see `cobra_model/gene_to_pathways_filt.json` for example)
 
 Installation
