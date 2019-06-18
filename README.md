@@ -4,7 +4,7 @@
 
 Metabolic Network Classifiers (MNCs) are flux balance analysis-based genome classifiers that achieve prediction accuracy on par with state-of-the-art machine learning approaches while enabling a mechanistic interpretation of the genotype-phenotype map. MNCs thus provide a FBA framework for microbial genome-wide association studies (GWAS) (preprint SOON). Inference and computation of MNCs utilize cobrascape (see https://github.com/erolkavvas/cobrascape.git), which wraps around COBRApy package (https://github.com/opencobra/cobrapy) to model a population of strain-specific genome-scale models (GEMs) at allelic resolution.
 
-![cobrafig](/metabolic-network-classifiers\_MNC\_overview.png?raw=true)
+![cobrafig](/MNC\_overview.png?raw=true)
 
 ### Generating Metabolic Network Classifiers
 Run both `gen_mnc_samples.py` and `eval_mnc_samples.py`
