@@ -1,0 +1,8 @@
+-f
+input_data
+-s
+5
+-o
+mnc_ensemble_0
+--testsize
+0.90
