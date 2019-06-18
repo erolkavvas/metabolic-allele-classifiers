@@ -21,14 +21,16 @@ Once a large number of MNCs has been generated (~1000+), they can be analyzed to
 
 ## Input Data
 - The following files are to be placed in INPUT_DIR. The files should be named exactly as described below.
-    - `genome-scale model`&nbsp;(filename: 'MODEL_FILE.json')&nbsp;REQUIRED  
-    - `strain allele matrix` &nbsp;(filename: 'X_ALLELES_FILE.csv')&nbsp;REQUIRED  
-    - `strain phenotypes matrix`&nbsp;(filename: 'Y_PHENOTYPES_FILE.csv')&nbsp;REQUIRED  
-    - GENE_LIST_FILE&nbsp;(filename: 'GENE_LIST_FILE.csv')&nbsp;OPTIONAL - highly recommended <200 genes. otherwise sample deeply  
-- JSON object describing mapping of genes to pathways for the organism (see `cobra_model/gene_to_pathways_filt.json` for example)
-- JSON object describing mapping of gene ids to names (see `cobra_model/gene_to_name.json` for example)
-
-## Installation
-	`$ git clone https://github.com/erolkavvas/metabolic-network-classifiers.git`
+    - `MODEL_FILE.json` (**REQUIRED**). A genome-scale model in json format
+    - `X_ALLELES_FILE.csv` (**REQUIRED**). A strain allele matrix with shape (strains, alleles). Alleles (columns) should have the same name as the gene ids in the genome-scale model (with \_num appended to specify the allele id) 
+    - `Y_PHENOTYPES_FILE.csv` (**REQUIRED**). A strain phenotypes matrix with shape (strains, phenotypes)
+    - `GENE_LIST_FILE.csv` (_OPTIONAL_). A pandas series or dataframe with index specifying the list of genes to limit the modeled alleles to. Highly recommended <200 genes. otherwise sample deeply  
+-  `cobra_model/gene_to_pathways.json`. JSON object describing mapping of genes to pathways for the organism. Required for pathway enrichments.
+- `gene_to_name.json`. JSON object describing mapping of gene ids to names. OPTIONAL.
 
 Strain allele matrix and strain phenotypes matrix from (https://rdcu.be/9rHj) and cobra model from (https://rdcu.be/bG6JO).
+
+## Installation
+	$ git clone https://github.com/erolkavvas/metabolic-network-classifiers.git
+
+
