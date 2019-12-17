@@ -1,11 +1,11 @@
 """
-eval_mnc_samples.py: code for evaluating sampled MNCs on test set.
+02_eval_macs.py: code for evaluating sampled MNCs on test set.
 The code has been generated in such a way such that the total set of samples can be built with additive runs of this program.
 To execute the code:
 
-python eval_mnc_samples.py -f MNC_ENSEMBLE_DIR [--testset --bicthresh]
+python 02_eval_macs.py.py -f MNC_ENSEMBLE_DIR [--testset --bicthresh]
 
-e.g., tightdude$ python eval_mnc_samples.py -f mnc_ensemble_0
+e.g., tightdude$ python 02_eval_macs.py -f mnc_ensemble_0
 
 - MNC_ENSEMBLE_DIR: Path to folder containing an output directory of gen_mnc_samples.py
 """
@@ -27,10 +27,10 @@ warnings.filterwarnings("ignore")  # sklearn gives hella warnings.
 resource.setrlimit(resource.RLIMIT_NOFILE, (10000,-1))
 
 # Argument parsing
-parser = argparse.ArgumentParser(description='Evaluate MNC samples')
+parser = argparse.ArgumentParser(description='Evaluate MAC samples')
 ### Required parameters
 parser.add_argument('-f',dest='mnc_dir',required=True,
-                    help='Path to folder containing MNC samples. Should be same as -o argument of gen_mnc_samples.py')
+                    help='Path to folder containing MAC samples. Should be same as -o argument of 01_sample_macs.py')
 ### Optional parameters (see Methods section of Kavvas et al 2020 for parameters utilized in study)
 parser.add_argument('--testset', dest='train_test', action='store_true',
                     help='Whether to evaluate for training (False) or test (True) set. Type --testset to specify False (default: False)')

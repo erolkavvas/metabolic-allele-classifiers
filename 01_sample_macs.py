@@ -1,11 +1,11 @@
 """
-gen_mnc_samples.py: code for generating samples of Metabolic Network Classifiers (MNCs).
+01_sample_macs.py: code for generating samples of Metabolic Allele Classifiers (MACs).
 The code has been generated in such a way such that the total set of samples can be built with additive runs of this program.
 To execute the code:
 
-python gen_mnc_samples.py -f INPUT_DIR -s NUM_SAMPLES -o OUT_DIR [-a ACTION_NUM --nabound --fracopt --fracpfba --openexch --fvaconstraints]
+python 01_sample_macs.py -f INPUT_DIR -s NUM_SAMPLES -o OUT_DIR [-a ACTION_NUM --nabound --fracopt --fracpfba --openexch --fvaconstraints]
 
-e.g., tightdude$ python gen_mnc_samples.py -f input_data -s 2 -o mnc_ensemble_0 --testsize 0.9
+e.g., tightdude$ python 01_sample_macs.py -f input_data -s 2 -o mnc_ensemble_0 --testsize 0.9
 
 - INPUT_DIR: Path to folder containing the following files named exactly below
     cobra model                 (filename: 'MODEL_FILE.json')       REQUIRED
@@ -17,7 +17,7 @@ e.g., tightdude$ python gen_mnc_samples.py -f input_data -s 2 -o mnc_ensemble_0 
 - ACTION_NUM: Number of total upper and lower bound constraints per allele. Must be an even number!
 - NUM_SAMPLES: Number of samples to generate (recommend 2 for first run)
 """
-print("... running gen_mnc_samples ... loading packages and input data ...")
+print("... running 01_sample_macs.py ... loading packages and input data ...")
 import cobrascape.species as cs
 from cobra.io import load_json_model
 import pandas as pd
@@ -38,10 +38,10 @@ resource.setrlimit(resource.RLIMIT_NOFILE, (10000,-1))
 warnings.filterwarnings("ignore")  # sklearn gives hella warnings.
 
 # Argument parsing
-parser = argparse.ArgumentParser(description='Generate MNC samples')
+parser = argparse.ArgumentParser(description='Generate MAC samples')
 ### Required parameters
 parser.add_argument('-f',dest='input_dir',required=True,
-                    help='Path to folder containing MNC data inputs: cobra model (MODEL_FILE), strain allele matrix (X_ALLELES_FILE), strain phenotypes matrix (Y_PHENOTYPES_FILE), and optionally GENE_LIST')
+                    help='Path to folder containing MAC data inputs: cobra model (MODEL_FILE), strain allele matrix (X_ALLELES_FILE), strain phenotypes matrix (Y_PHENOTYPES_FILE), and optionally GENE_LIST')
 parser.add_argument('-s',type=int,dest='num_samples',required=True,
                     help='Number of samples to generate (recommend 2 for test run)')
 parser.add_argument('-o',dest='out_dir',required=True,
@@ -72,7 +72,7 @@ parser.add_argument('--pcancomps',type=float,dest='pcancomps', default=0.9,
 parser.add_argument('--gensamples', dest='gensamples', action='store_false',
                     help='Whether to build species object and sample landscapes. Type --gensamples to specify False. Useful if samples already generated and you want to go straight to computing MNC objectives (default: True)')
 parser.add_argument('--estobjective', dest='estobjective', action='store_false',
-                    help='Whether to estimate MNC objectives for generated samples. Type --estobjective to specify False. Useful if you only want to generate samples without approximating objective at end (default: True)')
+                    help='Whether to estimate MAC objectives for generated samples. Type --estobjective to specify False. Useful if you only want to generate samples without approximating objective at end (default: True)')
 ### Should I add arguments for generating samples and estimating objectives?
 args = parser.parse_args()
 
@@ -81,7 +81,7 @@ if not os.path.exists(ENSEMBLE_DIR+"/"):
     print('\t... creating ensemble directory:'+ENSEMBLE_DIR+"/")
     os.makedirs(ENSEMBLE_DIR+"/")
     print('\t... saving parameters to ensemble directory')
-    with open(ENSEMBLE_DIR+'/mnc_ensemble_args.txt', 'w') as f:
+    with open(ENSEMBLE_DIR+'/mac_ensemble_args.txt', 'w') as f:
         f.write('\n'.join(sys.argv[1:]))
     ### save to json
     args_dict = {
@@ -90,10 +90,10 @@ if not os.path.exists(ENSEMBLE_DIR+"/"):
         'popFVA_STANDARDIZE': args.popFVA_STANDARDIZE,
         'testsize': args.testsize
     }
-    save_json_obj(args_dict, ENSEMBLE_DIR+"/mnc_ensemble_args.json")
+    save_json_obj(args_dict, ENSEMBLE_DIR+"/mac_ensemble_args.json")
 else:
     exit_script=False
-    args_dict = load_json_obj(ENSEMBLE_DIR+"/mnc_ensemble_args.json")
+    args_dict = load_json_obj(ENSEMBLE_DIR+"/mac_ensemble_args.json")
 
     if str(args_dict["nabound"])!=str(args.add_na_bound):
         print("--nabound argument is different!")
