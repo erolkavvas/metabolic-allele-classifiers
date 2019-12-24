@@ -2,7 +2,7 @@
 
 # Metabolic Allele Classifiers
 
-Metabolic Allele Classifiers (MACs) are flux balance analysis-based genome classifiers that achieve prediction accuracy on par with state-of-the-art machine learning approaches while enabling a mechanistic interpretation of the genotype-phenotype map. MACs thus provide a FBA framework for microbial genome-wide association studies (GWAS). Inference and computation of MNCs utilize cobrascape (https://github.com/erolkavvas/cobrascape), which wraps around COBRApy package (https://github.com/opencobra/cobrapy) to model a population of strain-specific genome-scale models (GEMs) at allelic resolution.
+Metabolic Allele Classifiers (MACs) are flux balance analysis-based genome classifiers that achieve prediction accuracy on par with state-of-the-art machine learning approaches while enabling a mechanistic interpretation of the genotype-phenotype map. MACs thus provide a FBA framework for microbial genome-wide association studies (GWAS). Inference and computation of MACs utilize cobrascape (https://github.com/erolkavvas/cobrascape), which wraps around COBRApy package (https://github.com/opencobra/cobrapy) to model a population of strain-specific genome-scale models (GEMs) at allelic resolution.
 
 ![cobrafig][image-2]
 
