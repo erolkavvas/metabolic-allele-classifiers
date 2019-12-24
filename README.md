@@ -19,11 +19,7 @@ Metabolic Allele Classifiers (MACs) are flux balance analysis-based genome class
 ## Estimating a Metabolic Allele Classifier
 
 1. Run **`$ python 01_sample_macs.py -f INPUT_DIR -s NUM_SAMPLES -o MAC_DIR [optional parameters...]`**
-	- `INPUT_DIR`: Path to folder containing the following files named exactly below
-		- cobra model                 (filename: 'MODEL_FILE.json')       REQUIRED
-    	- strain allele matrix        (filename: 'X_ALLELES_FILE.csv')    REQUIRED
-    	- strain phenotypes matrix    (filename: 'Y_PHENOTYPES_FILE.csv') REQUIRED
-    	- GENE_LIST_FILE              (filename: 'GENE_LIST_FILE.csv')    OPTIONAL (Recommend <200 genes, otherwise sample deeply)
+	- `INPUT_DIR`: See Input Data section below.
 	- `NUM_SAMPLES`: Number of samples to generate (recommend 2 for test run, but \>1000 samples for meaningful results)
 	- `MAC_DIR`: Path to MAC ensemble directory.
 2. Run **`$ python 02_eval_macs.py -f MAC_DIR [--testset --bicthresh]`**
