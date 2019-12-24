@@ -46,4 +46,4 @@ Strain allele matrix and strain phenotypes matrix from (https://rdcu.be/9rHj) an
 [1]:	https://github.com/erolkavvas/escher/blob/master/LICENSE
 
 [image-1]:	https://img.shields.io/pypi/l/Escher.svg
-[image-2]:	/MAC%5C_overview.png?raw=true
+[image-2]:	/MAC_overview.png?raw=true
