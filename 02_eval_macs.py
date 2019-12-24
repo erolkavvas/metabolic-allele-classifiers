@@ -3,7 +3,7 @@
 The code has been generated in such a way such that the total set of samples can be built with additive runs of this program.
 To execute the code:
 
-python 02_eval_macs.py.py -f MNC_ENSEMBLE_DIR [--testset --bicthresh]
+python 02_eval_macs.py.py -f MAC_ENSEMBLE_DIR [--testset --bicthresh]
 
 e.g., tightdude$ python 02_eval_macs.py -f mnc_ensemble_0
 
