@@ -81,7 +81,7 @@ if not os.path.exists(ENSEMBLE_DIR+"/"):
     print('\t... creating ensemble directory:'+ENSEMBLE_DIR+"/")
     os.makedirs(ENSEMBLE_DIR+"/")
     print('\t... saving parameters to ensemble directory')
-    with open(ENSEMBLE_DIR+'/mac_ensemble_args.txt', 'w') as f:
+    with open(ENSEMBLE_DIR+'/mnc_ensemble_args.txt', 'w') as f:
         f.write('\n'.join(sys.argv[1:]))
     ### save to json
     args_dict = {
@@ -90,10 +90,10 @@ if not os.path.exists(ENSEMBLE_DIR+"/"):
         'popFVA_STANDARDIZE': args.popFVA_STANDARDIZE,
         'testsize': args.testsize
     }
-    save_json_obj(args_dict, ENSEMBLE_DIR+"/mac_ensemble_args.json")
+    save_json_obj(args_dict, ENSEMBLE_DIR+"/mnc_ensemble_args.json")
 else:
     exit_script=False
-    args_dict = load_json_obj(ENSEMBLE_DIR+"/mac_ensemble_args.json")
+    args_dict = load_json_obj(ENSEMBLE_DIR+"/mnc_ensemble_args.json")
 
     if str(args_dict["nabound"])!=str(args.add_na_bound):
         print("--nabound argument is different!")
@@ -103,8 +103,8 @@ else:
         print("--action_num argument is different!")
         exit_script=True
 
-    if args_dict["popFVA_STANDARDIZE"]!=str(popFVA_STANDARDIZE):
-        print("--popfvascale argument is different!")
+    if args_dict["popFVA_STANDARDIZE"]!=args.popFVA_STANDARDIZE:
+        print("--popfvascale argument is different!", args_dict["popFVA_STANDARDIZE"], str(args.popFVA_STANDARDIZE))
         exit_script=True
 
     if args_dict["testsize"]!=args.testsize:

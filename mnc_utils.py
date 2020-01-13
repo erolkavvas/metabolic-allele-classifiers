@@ -16,7 +16,6 @@ from collections import Counter
 from statsmodels.sandbox.stats.multicomp import multipletests
 from scipy.stats import hypergeom
 import ast
-import qvalue
 import cobrascape.ensemble as ens
 
 def set_sample_pheno_popobj(ensemble_dir, species_mod, sample_id, obj_direct, pheno_id="isoniazid", ic_id="BIC", 

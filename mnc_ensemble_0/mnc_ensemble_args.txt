@@ -1,8 +1,8 @@
 -f
 input_data
 -s
-5
+2
 -o
 mnc_ensemble_0
 --testsize
-0.90
+0.9
