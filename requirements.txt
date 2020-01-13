@@ -7,38 +7,38 @@ Pebble == 4.3.10
 # mnc_utils.py: 11
 adjustText == 0.7.3
 
-# 01_sample_mncs.py: 22,200,209
-# 02_eval_mncs.py: 14
+# 01_sample_macs.py: 22,200,209
+# 02_eval_macs.py: 14
 # cobrascape/ensemble.py: 19
 # cobrascape/species.py: 744,745
 cobra == 0.15.3
 
-# 02_eval_mncs.py: 21
+# 02_eval_macs.py: 21
 # cobrascape/plotting.py: 11,12,13,14,15,18,271
-# mnc_utils.py: 2,7,555
+# mnc_utils.py: 2,7,554
 matplotlib == 3.0.3
 
-# 01_sample_mncs.py: 31
-# 02_eval_mncs.py: 17
+# 01_sample_macs.py: 31
+# 02_eval_macs.py: 17
 # cobrascape/ensemble.py: 13
 # cobrascape/plotting.py: 4
 # cobrascape/species.py: 729
 # mnc_utils.py: 8
 numpy == 1.16.2
 
-# 01_sample_mncs.py: 23
-# 02_eval_mncs.py: 16
+# 01_sample_macs.py: 23
+# 02_eval_macs.py: 16
 # cobrascape/ensemble.py: 14
 # cobrascape/plotting.py: 6
 # cobrascape/species.py: 16
 # mnc_utils.py: 4
 pandas == 0.24.2
 
-# 01_sample_mncs.py: 33
-# 02_eval_mncs.py: 23
+# 01_sample_macs.py: 33
+# 02_eval_macs.py: 23
 # cobrascape/ensemble.py: 24,27
 # cobrascape/plotting.py: 20,270,272
-# mnc_utils.py: 5,557,559
+# mnc_utils.py: 5,556,558
 scikit_learn == 0.21.2
 
 # cobrascape/ensemble.py: 25
@@ -46,7 +46,7 @@ scikit_learn == 0.21.2
 # mnc_utils.py: 10,17
 scipy == 1.2.1
 
-# 02_eval_mncs.py: 20
+# 02_eval_macs.py: 20
 # cobrascape/plotting.py: 5
 # mnc_utils.py: 1
 seaborn == 0.9.0
@@ -54,13 +54,13 @@ seaborn == 0.9.0
 # cobrascape/species.py: 8
 six == 1.12.0
 
-# 01_sample_mncs.py: 34,35
+# 01_sample_macs.py: 34,35
 # cobrascape/ensemble.py: 22
-# mnc_utils.py: 16,558
+# mnc_utils.py: 16,557
 statsmodels == 0.9.0
 
-# 01_sample_mncs.py: 27
-# 02_eval_mncs.py: 25
+# 01_sample_macs.py: 27
+# 02_eval_macs.py: 25
 # cobrascape/ensemble.py: 12
 # cobrascape/species.py: 6
 # mnc_utils.py: 9
