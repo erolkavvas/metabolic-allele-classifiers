@@ -1,5 +1,6 @@
 """
-02_eval_macs.py: code for evaluating sampled MNCs on test set.
+02_eval_macs.py: code for evaluating sampled MACs on either the test set or training set. 
+
 The code has been generated in such a way such that the total set of samples can be built with additive runs of this program.
 To execute the code:
 
