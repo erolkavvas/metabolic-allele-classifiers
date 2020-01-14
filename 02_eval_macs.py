@@ -7,7 +7,7 @@ python 02_eval_macs.py.py -f MAC_ENSEMBLE_DIR [--testset --bicthresh]
 
 e.g., tightdude$ python 02_eval_macs.py -f mnc_ensemble_0
 
-- MNC_ENSEMBLE_DIR: Path to folder containing an output directory of gen_mnc_samples.py
+- MAC_ENSEMBLE_DIR: Path to folder containing an output directory of 01_sample_macs.py
 """
 import cobrascape.species as cs
 import cobrascape.ensemble as ens
@@ -17,8 +17,8 @@ import pandas as pd
 import numpy as np
 import sys,os,argparse,resource,warnings,itertools
 from os import listdir
-import seaborn as sns
-import matplotlib.pyplot as plt
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 from random import shuffle
 from sklearn.metrics import roc_curve, auc
 from collections import Counter
